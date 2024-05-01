@@ -1,33 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 export default function App() {
-  const [name, setName] = useState('John');
-  const [age, setAge] = useState('35');
+  const [people, setPeople] = useState([
+    { name: 'shaun', id: '1' },
+    { name: 'yoshi', id: '2' },
+    { name: 'mario', id: '3' },
+    { name: 'luigi', id: '4' },
+    { name: 'peach', id: '5' },
+    { name: 'toad', id: '6' },
+    { name: 'bowser', id: '7' },
+  ]);
 
   return (
     <View style={styles.container}>
-      <View style={styles.body}>
-        <Text>Enter a name</Text>
-        <TextInput
-          multiline
-          style={styles.input}
-          placeholder="e.g. John Doe"
-          onChangeText={(value) => setName(value)}
-        />
-        <Text>Enter a name</Text>
-        <TextInput
-          keyboardType="numeric"
-          style={styles.input}
-          placeholder="e.g. 35"
-          onChangeText={(value) => setAge(value)}
-        />
-        <Text>
-          Name : {name}, Age : {age}
-        </Text>
-      </View>
-      <StatusBar style="auto" />
+      <FlatList
+        numColumns={2}
+        data={people}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Text style={styles.item}>{item.name}</Text>}
+      />
     </View>
   );
 }
@@ -35,18 +27,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 40,
+    paddingHorizontal: 20,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  buttonContainer: {
-    marginTop: 20,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#777',
-    padding: 8,
-    margin: 10,
-    width: 200,
+  item: {
+    flex: 1,
+    marginHorizontal: 10,
+    marginTop: 24,
+    padding: 30,
+    backgroundColor: 'pink',
+    fontSize: 24,
   },
 });
