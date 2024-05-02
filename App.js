@@ -51,8 +51,8 @@ export default function App() {
   }
 
   return (
-    <View onLayout={onLayoutRootView}>
-      <Home />
+    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <Home onLayout={onLayoutRootView} />
     </View>
   );
 }
