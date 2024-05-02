@@ -1,12 +1,17 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
-import Entypo from '@expo/vector-icons/Entypo';
+import { View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import Home from './screens/home';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
+
+const getFonts = () =>
+  Font.loadAsync({
+    'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
+    'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf'),
+  });
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -15,7 +20,7 @@ export default function App() {
     async function prepare() {
       try {
         // Pre-load fonts, make any API calls you need to do here
-        await Font.loadAsync(Entypo.font);
+        getFonts();
         // Artificially delay for two seconds to simulate a slow loading
         // experience. Please remove this if you copy and paste the code!
         await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -51,32 +56,3 @@ export default function App() {
     </View>
   );
 }
-
-// ??? A valid alterntative code ???
-/*
-import React, { useEffect, useState } from 'react';
-import Home from './screens/home';
-import * as Font from 'expo-font';
-
-async function getFonts() {
-    await Font.loadAsync({
-        'nunito-regular': require('../assets/fonts/Nunito-Regular.ttf'),
-        'nunito-bold': require('../assets/fonts/Nunito-Bold.ttf'),
-    });
-}
-
-export default function App() {
-    const [fontsLoaded, setFontsLoaded] = useState(false);
-
-    useEffect(() => {
-        (async () => {
-            await getFonts();
-            setFontsLoaded(true);
-        })();
-    }, [fontsLoaded]);
-
-    if (fontsLoaded === true) {
-        return <Home />;
-    }
-}
-*/
