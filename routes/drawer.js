@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import Home from '../screens/home';
-import ReviewDetails from '../screens/reviewDetails';
+import About from '../screens/about';
 
 const Drawer = createDrawerNavigator();
 
@@ -23,9 +23,9 @@ export default function Navigator() {
             options={{ title: 'GameZone' }}
           />
           <Drawer.Screen
-            name="ReviewDetails"
-            component={ReviewDetails}
-            options={{ title: 'Review Details' }}
+            name="About"
+            component={About}
+            options={{ title: 'About' }}
           />
         </Drawer.Group>
       </Drawer.Navigator>
