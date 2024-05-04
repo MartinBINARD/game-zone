@@ -4,29 +4,27 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import HomeStackNavigator from './homeStack';
 import About from '../screens/about';
+import Header from '../shared/header';
+import HeaderBackground from '../shared/headerBackground';
 
 const Drawer = createDrawerNavigator();
 
 export default function Navigator() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="HomeTabs">
+      <Drawer.Navigator initialRouteName="GameZon">
         <Drawer.Group
           screenOptions={{
-            headerTintColor: '#444',
-            headerStyle: { backgroundColor: '#eee', height: 60 },
+            headerTitle: () => <Header title="GameZone" />,
+            headerBackground: () => <HeaderBackground />,
           }}
         >
           <Drawer.Screen
-            name="HomeTabs"
+            name="Gamezone"
             component={HomeStackNavigator}
-            options={{ title: 'GameZone' }}
+            title="GameZone"
           />
-          <Drawer.Screen
-            name="About"
-            component={About}
-            options={{ title: 'About' }}
-          />
+          <Drawer.Screen name="About" component={About} title="About" />
         </Drawer.Group>
       </Drawer.Navigator>
     </NavigationContainer>
