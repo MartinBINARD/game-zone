@@ -8,23 +8,16 @@ const Stack = createNativeStackNavigator();
 export default function HomeStackNavigator() {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Group
-        screenOptions={{
-          headerTintColor: '#444',
-          headerStyle: { backgroundColor: '#eee', height: 60 },
-        }}
-      >
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ title: 'GameZone' }}
-        />
-        <Stack.Screen
-          name="ReviewDetails"
-          component={ReviewDetails}
-          options={{ title: 'Review Details' }}
-        />
-      </Stack.Group>
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{ title: 'Games list' }}
+      />
+      <Stack.Screen
+        name="ReviewDetails"
+        component={ReviewDetails}
+        options={{ title: 'Review Details' }}
+      />
     </Stack.Navigator>
   );
 }
