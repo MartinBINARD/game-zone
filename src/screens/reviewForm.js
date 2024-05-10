@@ -1,8 +1,8 @@
 import { TextInput, View, Text } from 'react-native';
-import { globalStyles } from '../styles/global.js';
 import { Formik } from 'formik';
 import { object, string } from 'yup';
 
+import { globalStyles } from '../styles/global.js';
 import FlatButton from '../shared/button.js';
 
 export default function ReviewForm({ addReview }) {

@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet } from 'react-native';
 export default function HeaderBackground() {
   return (
     <ImageBackground
-      source={require('../assets/game_bg.png')}
+      source={require('../../assets/game_bg.png')}
       style={styles.headerBackground}
     />
   );

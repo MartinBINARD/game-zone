@@ -4,7 +4,7 @@ export default function Header({ title }) {
   return (
     <View style={styles.headerTitle}>
       <Image
-        source={require('../assets/heart_logo.png')}
+        source={require('../../assets/heart_logo.png')}
         style={styles.headerImage}
       />
       <Text style={styles.headerText}>{title}</Text>

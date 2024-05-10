@@ -1,9 +1,9 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
-    "types": ["node","jest"],
+    "types": ["node", "jest"],
     "baseUrl": ".",
-    "lib": ["DOM", "ESNext"],
+    "lib": ["DOM", "ESNext"]
   },
   "exclude": ["ios", "android"],
   "include": ["src/**/*"]
