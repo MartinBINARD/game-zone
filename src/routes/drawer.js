@@ -12,7 +12,7 @@ const Drawer = createDrawerNavigator();
 export default function Navigator() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="GameZon">
+      <Drawer.Navigator initialRouteName="GameZone">
         <Drawer.Group
           screenOptions={{
             headerTitle: () => <Header title="GameZone" />,

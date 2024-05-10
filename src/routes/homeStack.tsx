@@ -1,9 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { HomeStackNavigatorParamsList } from 'src/@types/react-navigation';
+
 import Home from '../screens/home';
 import ReviewDetails from '../screens/reviewDetails';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<HomeStackNavigatorParamsList>();
 
 export default function HomeStackNavigator() {
   return (
