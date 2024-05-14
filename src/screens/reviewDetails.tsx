@@ -1,9 +1,22 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  ImageSourcePropType,
+} from 'react-native';
 import { globalStyles, images } from '../styles/global';
 import Card from '../shared/card';
+import { RouteProp } from '@react-navigation/native';
+import { HomeStackNavigatorParamsList } from 'src/@types/react-navigation';
 
-export default function ReviewDetails({ route }) {
+type ReviewDetailsProps = {
+  route: RouteProp<HomeStackNavigatorParamsList, 'ReviewDetails'>;
+};
+
+export default function ReviewDetails({ route }: ReviewDetailsProps) {
   const { title, body, rating } = route.params;
+  const ratingInNumber: number = parseInt(rating);
 
   return (
     <View style={globalStyles.container}>
@@ -13,7 +26,9 @@ export default function ReviewDetails({ route }) {
         <Text>{rating}</Text>
         <View style={styles.rating}>
           <Text>GameZone rating : </Text>
-          <Image source={images.ratings[rating]} />
+          <Image
+            source={images.ratings[ratingInNumber] as ImageSourcePropType}
+          />
         </View>
       </Card>
     </View>

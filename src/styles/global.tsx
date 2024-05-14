@@ -1,5 +1,11 @@
 import { StyleSheet } from 'react-native';
 
+export type Ratings = Record<number, symbol>;
+
+export interface ImagesInterface {
+  ratings: Ratings;
+}
+
 export const globalStyles = StyleSheet.create({
   titleText: {
     fontSize: 18,
@@ -30,7 +36,7 @@ export const globalStyles = StyleSheet.create({
   },
 });
 
-export const images = {
+export const images: ImagesInterface = {
   ratings: {
     1: require('../../assets/rating-1.png'),
     2: require('../../assets/rating-2.png'),
@@ -38,4 +44,4 @@ export const images = {
     4: require('../../assets/rating-4.png'),
     5: require('../../assets/rating-5.png'),
   },
-};
+} as const;
