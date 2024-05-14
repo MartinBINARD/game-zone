@@ -1,6 +1,17 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  GestureResponderEvent,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
-export default function FlatButton({ text, onPress }) {
+type FlatButtonProps = {
+  text: string;
+  onPress: (e: GestureResponderEvent) => void;
+};
+
+export default function FlatButton({ text, onPress }: FlatButtonProps) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.button}>

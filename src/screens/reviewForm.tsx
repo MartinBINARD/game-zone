@@ -1,4 +1,4 @@
-import { TextInput, View, Text } from 'react-native';
+import { TextInput, View, Text, GestureResponderEvent } from 'react-native';
 import { Formik } from 'formik';
 import { object, string } from 'yup';
 
@@ -68,7 +68,12 @@ export default function ReviewForm({ addReview }: AddReviewProps) {
               {props.touched.rating && props.errors.rating}
             </Text>
 
-            <FlatButton text="submit" onPress={props.handleSubmit} />
+            <FlatButton
+              text="submit"
+              onPress={
+                props.handleSubmit as (e?: GestureResponderEvent) => void
+              }
+            />
           </View>
         )}
       </Formik>
