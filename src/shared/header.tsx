@@ -1,6 +1,10 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-export default function Header({ title }) {
+type titleProp = {
+  title: string;
+};
+
+export default function Header({ title }: titleProp) {
   return (
     <View style={styles.headerTitle}>
       <Image
