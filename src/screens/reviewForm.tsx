@@ -2,10 +2,10 @@ import { TextInput, View, Text, GestureResponderEvent } from 'react-native';
 import { Formik } from 'formik';
 import { object, string } from 'yup';
 
-import { ReviewProps } from './home.js';
+import { globalStyles } from '../styles/global.tsx';
 
-import { globalStyles } from '../styles/global.js';
-import FlatButton from '../shared/button.js';
+import { ReviewProps } from './home.tsx';
+import FlatButton from 'src/shared/button.tsx';
 
 type AddReviewProps = {
   addReview: (value: ReviewProps) => void;
