@@ -1,3 +1,5 @@
+import { ReviewProps } from 'src/screens/home';
+
 export type DrawerStackNavigatorParamsList = {
   Gamezone: undefined;
   About: undefined;
@@ -9,5 +11,5 @@ export type AboutStackParamList = {
 
 export type HomeStackNavigatorParamsList = {
   Home: undefined;
-  ReviewDetails: undefined;
+  ReviewDetails: ReviewProps;
 };

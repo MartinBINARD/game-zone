@@ -2,10 +2,16 @@ import { TextInput, View, Text } from 'react-native';
 import { Formik } from 'formik';
 import { object, string } from 'yup';
 
+import { ReviewProps } from './home.js';
+
 import { globalStyles } from '../styles/global.js';
 import FlatButton from '../shared/button.js';
 
-export default function ReviewForm({ addReview }) {
+type AddReviewProps = {
+  addReview: (value: ReviewProps) => void;
+};
+
+export default function ReviewForm({ addReview }: AddReviewProps) {
   const ReviewSchema = object({
     title: string().required().min(4),
     body: string().required().min(8),
@@ -19,7 +25,7 @@ export default function ReviewForm({ addReview }) {
   return (
     <View style={globalStyles.container}>
       <Formik
-        initialValues={{ title: '', body: '', rating: '' }}
+        initialValues={{ title: '', body: '', rating: '', key: '' }}
         validationSchema={ReviewSchema}
         onSubmit={(values) => {
           addReview(values);

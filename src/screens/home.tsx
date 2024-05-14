@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {
   View,
   Text,
@@ -12,34 +13,50 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { globalStyles } from '../styles/global';
 
+import { HomeStackNavigatorParamsList } from 'src/@types/react-navigation';
+
 import Card from '../shared/card';
 import ReviewForm from './reviewForm';
 
-export default function Home({ navigation }) {
+type HomeScreenProps = {
+  navigation: NativeStackNavigationProp<
+    HomeStackNavigatorParamsList,
+    'ReviewDetails'
+  >;
+};
+
+export type ReviewProps = {
+  title: string;
+  rating: string;
+  body: string;
+  key: string;
+};
+
+export default function Home({ navigation }: HomeScreenProps) {
   const [modalOpen, setModalOpen] = useState(false);
 
   const [reviews, setReviews] = useState([
     {
       title: 'Zelda, Breath of Fresh Air',
-      rating: 5,
+      rating: '5',
       body: 'lorem ipsum',
       key: '1',
     },
     {
       title: 'Gotta Catch Them All (again)',
-      rating: 4,
+      rating: '4',
       body: 'lorem ipsum',
       key: '2',
     },
     {
       title: 'Not So "Final" Fantasy',
-      rating: 3,
+      rating: '3',
       body: 'lorem ipsum',
       key: '3',
     },
   ]);
 
-  const addReview = (review) => {
+  const addReview = (review: ReviewProps) => {
     review.key = Math.random().toString();
     setReviews((currentReview) => {
       return [review, ...currentReview];
