@@ -11,6 +11,7 @@ A simple Game review app in react native
 ## TOOLS
 
 - react-native
+- typescript
 - expo
 - formik
 - yup
