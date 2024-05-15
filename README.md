@@ -12,10 +12,12 @@ A simple Game review app in react native
 
 - react-native
 - typescript
+- jest
+- @testing-library/react-native
 - expo
 - formik
 - yup
 
 ## Before install
 
-- Use android studio with expo
+- Use [Android Studio](https://developer.android.com/studio)

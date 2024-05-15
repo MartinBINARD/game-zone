@@ -31,12 +31,14 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/plugin-transform-private-methods": "^7.24.1",
+    "@testing-library/react-native": "^12.5.0",
     "@tsconfig/react-native": "^3.0.5",
     "@types/jest": "^29.5.12",
     "@types/react": "~18.2.79",
     "@types/react-test-renderer": "^18.3.0",
     "babel-plugin-module-resolver": "^5.0.2",
     "metro-react-native-babel-preset": "^0.77.0",
+    "react-test-render": "^1.1.2",
     "ts-jest": "^29.1.2",
     "typescript": "~5.3.3"
   },
