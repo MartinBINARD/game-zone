@@ -69,6 +69,7 @@ export default function ReviewForm({ addReview }: AddReviewProps) {
             </Text>
 
             <FlatButton
+              testID="FlatButton:submit"
               text="submit"
               onPress={
                 props.handleSubmit as (e?: GestureResponderEvent) => void

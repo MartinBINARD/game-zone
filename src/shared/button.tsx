@@ -7,13 +7,14 @@ import {
 } from 'react-native';
 
 type FlatButtonProps = {
+  testID: string;
   text: string;
   onPress: (e: GestureResponderEvent) => void;
 };
 
-export default function FlatButton({ text, onPress }: FlatButtonProps) {
+export default function FlatButton({ testID, text, onPress }: FlatButtonProps) {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity testID={testID} onPress={onPress}>
       <View style={styles.button}>
         <Text style={styles.buttonText}>{text}</Text>
       </View>

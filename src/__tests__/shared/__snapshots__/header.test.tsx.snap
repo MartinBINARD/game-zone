@@ -13,11 +13,7 @@ exports[`header component should be render 1`] = `
   }
 >
   <Image
-    source={
-      {
-        "testUri": "../../../assets/heart_logo.png",
-      }
-    }
+    source={1}
     style={
       {
         "height": 26,
